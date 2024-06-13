@@ -20,7 +20,7 @@ export const Layout = ({children}) => {
   }
   
   return (
-    <div className="font-roboto font-semibold">
+    <div>
       <AnimatePresence>
       {
         isOpen &&

@@ -8,8 +8,9 @@
     src: url(./assets/CabinetGrotesk_Complete/CabinetGrotesk_Complete/Fonts/TTF/CabinetGrotesk-Variable.ttf);
   }
   
-  * {
+  body {
     font-family: Cabinet;
+    background: black;
   }
   
 }

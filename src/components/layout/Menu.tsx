@@ -18,7 +18,7 @@ export const Menu = () => {
   const links = [
       {
         title: "WORK",
-        path: "/work"
+        path: "/work",
       },
       {
         title: "PRODUCT",
@@ -45,13 +45,13 @@ export const Menu = () => {
         initial="initial"
         animate="animate"
         exit="exit"
-        className="fixed origin-right z-10 w-full flex flex-col px-8 justify-center h-screen font-semibold bg-white/15 backdrop-blur-md">
+        className="fixed origin-right z-10 w-full flex flex-col px-8 justify-center h-screen font-semibold bg-white/85 backdrop-blur-md">
         <motion.ul 
           variants={containerLinkVars}
           initial="initial"
           animate="open"
           exit="initial"
-          className="flex flex-col gap-y-5 text-4xl mb-20">
+          className="flex flex-col gap-y-5 text-4xl mb-24">
           {
             links.map((link) => {
               return (
@@ -73,7 +73,7 @@ export const Menu = () => {
         animate="animate"
         exit="exit"
         className="w-full fixed z-10 px-8 bottom-0 flex justify-between items-center h-20">
-          <div>DO MY BEST</div>
+          <div className="p-3 rounded-full bg-black text-white">LOVE FOR DESIGN</div>
           <ul className="flex gap-x-2">
             <li>GIT</li>
             <li>INS</li>
