@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Cabinet';
+    src: url(./assets/CabinetGrotesk_Complete/CabinetGrotesk_Complete/Fonts/TTF/CabinetGrotesk-Variable.ttf);
+  }
+  
+  * {
+    font-family: Cabinet;
+  }
+  
+}

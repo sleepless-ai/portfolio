@@ -6,92 +6,52 @@ import {
   motion
 } from 'framer-motion'
 
+import {
+  containerVars,
+  containerLinkVars,
+  mobileLinkVars,
+  footerContainer
+} from './utils/animations'
+
 export const Menu = () => {
   
   const links = [
       {
-        title: "Work",
+        title: "WORK",
         path: "/work"
       },
       {
-        title: "Products",
+        title: "PRODUCT",
         path: "/products"
       },
       {
-        title: "About us",
+        title: "ABOUT ME",
         path: "about"
       },
       {
-        title: "News",
+        title: "NEWS",
         path: "/news"
       },
       {
-        title: "Contact",
+        title: "CONTACT",
         path: "/contact"
       },
     ]
-    
-  const containerVars = {
-    initial: {
-      transition: {
-        staggerChildren: 0.1,
-        staggerDirection: -1
-      }
-    },
-    open: {
-      transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.08,
-        staggerDirection: 1
-      }
-    },
-  }
-  
-  const mobileLinkVars = {
-    initial: {
-      y: "30vh",
-      transition: {
-        duration: 0.7
-      }
-    },
-    open: {
-      y: 0,
-      transition: {
-        duration: 0.7
-      }
-    }
-  }
   
   return (
       <>
       <motion.div 
-        initial={{
-          scaleX:0,
-        }}
-        
-        animate={{
-          scaleX: 1,
-          transition: {
-            duration: 0.3,
-            ease: [0.12,0,0.39,0]
-          }
-        }}
-        
-        exit={{
-          scaleX: 0,
-          transition: {
-            duration: 0.3,
-            ease: [0.12,0,0.39,0],
-            delay: .8
-          }
-        }}
-        className="fixed origin-right z-10 w-full flex flex-col px-8 justify-center  h-screen bg-amber-400">
+        variants={containerVars}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        className="fixed origin-right z-10 w-full flex flex-col px-8 justify-center h-screen font-semibold bg-white/15 backdrop-blur-md">
         <motion.ul 
-          variants={containerVars}
+          variants={containerLinkVars}
           initial="initial"
           animate="open"
           exit="initial"
-          className="flex flex-col gap-y-5 text-5xl mb-40">
+          className="flex flex-col gap-y-5 text-4xl mb-20">
           {
             links.map((link) => {
               return (
@@ -108,30 +68,17 @@ export const Menu = () => {
         </motion.ul>
       </motion.div>
       <motion.div 
-        initial={{
-            scaleY:0,
-          }}
-          
-          animate={{
-            scaleY: 1,
-            transition: {
-              duration: 0.3,
-              ease: [0.12,0,0.39,0],
-              delay: .3
-            }
-          }}
-          
-          exit={{
-            scaleY: 0,
-            transition: {
-              duration: 0.3,
-              delay:.3,
-              ease: [0.12,0,0.39,0],
-            }
-          }}
+        variants={footerContainer}
+        initial="initial"
+        animate="animate"
+        exit="exit"
         className="w-full fixed z-10 px-8 bottom-0 flex justify-between items-center h-20">
-          <div>Do my best</div>
-          <div>Icons</div>
+          <div>DO MY BEST</div>
+          <ul className="flex gap-x-2">
+            <li>GIT</li>
+            <li>INS</li>
+            <li>FAC</li>
+          </ul>
       </motion.div>
     </>
   )
